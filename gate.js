@@ -60,6 +60,8 @@
       button.disabled=false;
     }
   });
+  if(!isSecureContext || !crypto.subtle || !navigator.serviceWorker){status.textContent='HTTPSで開き、最新版のブラウザーをご利用ください。';return;}
+  button.disabled=false;
   let saved;try{saved=sessionStorage.getItem(storageKey);}catch{}
   if(saved){button.disabled=true;status.textContent='サイトを開いています…';unlock(bytes(saved)).catch(()=>{try{sessionStorage.removeItem(storageKey);}catch{}button.disabled=false;status.textContent='もう一度パスワードを入力してください。';});}
 })();
