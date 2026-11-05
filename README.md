@@ -1,2 +1,13 @@
-# motion-web-practice
-Password-protected MOTION LAB web practice site.
+# MOTION LAB
+
+閲覧用パスワードで開くホームページ制作実践キットです。
+
+公開URL: https://novacore-lab.github.io/motion-web-practice/
+
+HTML・教材・スクリプト・3DモデルはAES-256-GCMで暗号化して保存しています。パスワードは公開ファイルやGit履歴に含みません。入力されたパスワードの確認と復号は閲覧者のブラウザー内で行います。サーバーへパスワードを送信しません。
+
+Chrome・Edge・Safari等の最新版とHTTPS接続が必要です。「退出」でロックします。個別会員管理やパスワードの再発行機能はありません。
+
+## 更新
+
+元データを修正してから暗号化パッケージを再生成して反映します。元の平文データ、閲覧パスワード、秘密情報をこの公開リポジトリへ追加しないでください。
