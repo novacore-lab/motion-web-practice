@@ -2,6 +2,11 @@
   'use strict';
   const base = new URL('./',document.currentScript.src);
   const storageKey = 'motion-access:' + base.pathname;
+  addEventListener('pageshow',event=>{
+    if(!event.persisted)return;
+    let raw;try{raw=sessionStorage.getItem(storageKey);}catch{}
+    if(!raw)location.replace(new URL('login.html',base));
+  });
   navigator.serviceWorker?.addEventListener('message',event=>{
     if(event.data?.type==='LOCKED'){
       try{sessionStorage.removeItem(storageKey);}catch{}
